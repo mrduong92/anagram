@@ -1,0 +1,35 @@
+version: '3'
+services:
+  homestead:
+    image: shincoder/homestead:php7.0
+    restart: always
+    ports:
+      - "80:80" # web
+      - "22:22" # ssh
+    volumes:
+      - ./:/apps # Project
+    links:
+      - mariadb
+      - mariadb_test
+  mariadb:
+    image: tutum/mariadb
+    restart: always
+    expose:
+      - "3306"
+    environment:
+      MARIADB_USER: homestead # cannot be changed ( for info. only )
+      MARIADB_PASS: secret
+    volumes:
+      - .docker/mariadb:/var/lib/mysql # database files
+  mariadb_test:
+    image: tutum/mariadb
+    restart: always
+    expose:
+      - "3306"
+    environment:
+      MARIADB_USER: homestead_test # cannot be changed ( for info. only )
+      MARIADB_PASS: secret
+    volumes:
+      - .docker/mariadb_test:/var/lib/mysql # database files
+
+
