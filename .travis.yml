@@ -1,0 +1,19 @@
+language: php
+
+addons:
+  hosts:
+    - travis.dev
+
+services:
+  - mysql
+
+php:
+  - 7.0
+
+before_script:
+  - cp .env.travis.example .env
+  - mysql -e 'create database homestead_test;'
+  - composer install --no-interaction
+  - php artisan key:generate
+
+script: ./vendor/bin/phpunit
