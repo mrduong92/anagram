@@ -1,7 +1,12 @@
 /node_modules
 /public/hot
 /public/storage
+/public/storage
+/public/assets
+/public/vendor
 /storage/*.key
+/storage/files
+/storage/debugbar
 /vendor
 /.idea
 /.vagrant
