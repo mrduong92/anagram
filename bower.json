@@ -1,0 +1,14 @@
+{
+  "name": "anagram",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/dung13890/anagram",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

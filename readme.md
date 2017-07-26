@@ -26,5 +26,7 @@ $ mysql -uhomestead -psecret;
 $ sudo vim /etc/hosts
 127.0.0.1   anagram.dev
 
-$ curl http://anagram.dev
+http://anagram.dev
 ```
+
+## Install NPM & Bower
