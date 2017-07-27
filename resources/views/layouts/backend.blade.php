@@ -9,10 +9,21 @@
     <meta name="description" content="Anagram">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title')</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="{{ mix('assets/css/backend/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app"></div>
+    <div id="app">
+        <!-- let people make clients -->
+        <passport-clients></passport-clients>
+
+        <!-- list of clients people have authorized to access our account -->
+        <passport-authorized-clients></passport-authorized-clients>
+
+        <!-- make it simple to generate a token right in the UI to play with -->
+        <passport-personal-access-tokens></passport-personal-access-tokens>
+    </div>
+    @yield('content')
     <script src="{{ mix('assets/vue/backend/manifest.js') }}"></script>
     <script src="{{ mix('assets/vue/backend/vendor.js') }}"></script>
     <script src="{{ mix('assets/vue/backend/app.js') }}"></script>
